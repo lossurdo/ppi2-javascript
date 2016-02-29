@@ -1,0 +1,18 @@
+{
+  "name": "ppi2-javascript",
+  "version": "1.0.0",
+  "description": "Projeto utilizado em sala de aula para exemplificar o uso básico de JavaScript, como preparação para o conteúdo de AngularJS na Faculdade de Tecnologia Senac Porto Alegre - FSPOA.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lossurdo/ppi2-javascript.git"
+  },
+  "author": "Rafael Lossurdo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lossurdo/ppi2-javascript/issues"
+  }
+}
