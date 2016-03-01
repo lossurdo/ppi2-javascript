@@ -14,5 +14,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lossurdo/ppi2-javascript/issues"
+  },
+  "dependencies": {
+    "prompt": "~1.0.0"
   }
 }
