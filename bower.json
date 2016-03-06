@@ -4,9 +4,6 @@
   "authors": [
     "Rafael Lossurdo <lossurdo@gmail.com>"
   ],
-  "description": "",
-  "main": "",
-  "moduleType": [],
   "license": "MIT",
   "ignore": [
     "**/.*",

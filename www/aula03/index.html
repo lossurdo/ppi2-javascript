@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simulador IRPF Mensal</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="icon" type="image/png" href="../bower_components/skeleton/images/favicon.png">
+        <link rel="stylesheet" href="../bower_components/skeleton/css/normalize.css" type="text/css">
+        <link rel="stylesheet" href="../bower_components/skeleton/css/skeleton.css" type="text/css">
+        <link rel='stylesheet' href='../css/raleway-google-fonts.css' type='text/css'>
+
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        
+        <script src="js/irpf.js"></script>
+    </head>
+    <body>
+
+        <div class="container">
+            
+            <div class="row">
+                <div class="twelve columns">                   
+                    <h1>Simulador de Imposto de Renda Mensal</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="six columns">                   
+                    <label for="rendimentosTributaveis">Rendimentos tributáveis</label>
+                    <input class="u-full-width" type="number" value="4000.00" placeholder="ex. 4000.00" id="rendimentosTributaveis">
+                </div>
+                <div class="six columns">                   
+                    <label for="totalDeducoes">Total de deduções</label>
+                    <input class="u-full-width" type="number" value="200.00" placeholder="ex. 200.00" id="totalDeducoes">
+                </div>
+            </div>
+
+            <div class="row">
+                <h5>Demonstrativo da Apuração do Imposto</h5>                
+                <div class="twelve columns">                   
+                    <table class="u-full-width">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Faixa da Base de Cálculo</th>
+                                <th>Alíquota</th>
+                                <th>Valor do Imposto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1ª faixa</td>
+                                <td id="f1">0,00</td>
+                                <td>Isento</td>
+                                <td>0,00</td>
+                            </tr>
+                            <tr>
+                                <td>2ª faixa</td>
+                                <td id="f2">0,00</td>
+                                <td>7,5%</td>
+                                <td id="i2">0,00</td>
+                            </tr>
+                            <tr>
+                                <td>3ª faixa</td>
+                                <td id="f3">0,00</td>
+                                <td>15%</td>
+                                <td id="i3">0,00</td>
+                            </tr>
+                            <tr>
+                                <td>4ª faixa</td>
+                                <td id="f4">0,00</td>
+                                <td>22,5%</td>
+                                <td id="i4">0,00</td>
+                            </tr>
+                            <tr>
+                                <td>5ª faixa</td>
+                                <td id="f5">0,00</td>
+                                <td>27,5%</td>
+                                <td id="i5">0,00</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td id="somatorioSalario">0,00</td>
+                                <td>--</td>
+                                <td id="somatorioImposto">0,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="twelve columns">                   
+                    <span class="u-pull-right">Fonte: Simulador da <a href="http://www.receita.fazenda.gov.br/Aplicacoes/ATRJO/Simulador/simulador.asp?tipoSimulador=M">Receita Federal</a></span>
+                </div>
+            </div>
+
+        </div>
+        
+        <script>
+            $(document).load(init());
+        </script>
+    </body>
+</html>
