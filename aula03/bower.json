@@ -1,0 +1,23 @@
+{
+  "name": "aula03",
+  "homepage": "https://github.com/lossurdo/ppi2-javascript",
+  "authors": [
+    "Rafael Lossurdo <lossurdo@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.1",
+    "zepto": "~1.1.6",
+    "skeleton": "~2.0.4"
+  }
+}
