@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="MeuApp">
+<head>
+	<title>Aula 04</title>
+
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+
+	<script src="../bower_components/angular/angular.min.js" type="text/javascript"></script>
+
+	<script src="controller.js" type="text/javascript"></script>
+</head>
+<body ng-controller="MeuController">
+
+<h1>Formulário de Inscrição</h1>
+<h3>Corrida SenacNightRun - 3km, 5km e 10km</h3>
+
+<div class="linha">
+	<label for="cpf">CPF: <input type="number" id="cpf" ng-model="cpf"></label>
+</div>
+
+<div class="linha">
+	<label for="nome">Nome completo: <input type="text" id="nome" ng-model="nome" size="40" placeholder="ex. João da Silva"></label>
+</div>
+
+<h1>{{nome}}</h1>
+
+<script src="../bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+
+<script>
+	$(document).ready(function() {
+		$('#cpf').focus();
+	});		
+</script>
+</body>
+</html>
