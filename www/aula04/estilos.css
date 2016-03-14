@@ -6,3 +6,7 @@ label,input {
 	padding-bottom: 1em;
 	width: 100%
 }
+
+.invalido {
+	background-color: #FFFF99;
+}

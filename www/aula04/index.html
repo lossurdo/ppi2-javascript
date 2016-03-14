@@ -14,15 +14,47 @@
 <h1>Formulário de Inscrição</h1>
 <h3>Corrida SenacNightRun - 3km, 5km e 10km</h3>
 
-<div class="linha">
-	<label for="cpf">CPF: <input type="number" id="cpf" ng-model="cpf"></label>
-</div>
+<form ng-submit="inscrever()">
 
-<div class="linha">
-	<label for="nome">Nome completo: <input type="text" id="nome" ng-model="nome" size="40" placeholder="ex. João da Silva"></label>
-</div>
+	<div class="linha">
+		<label for="cpf">CPF: <input type="number" id="cpf" ng-model="cpf" ng-class="isVazio(cpf)"></label>
+	</div>
 
-<h1>{{nome}}</h1>
+	<div class="linha">
+		<label for="email">Email: <input type="email" id="email" ng-model="email" size="60" placeholder="ex. joao@gmail.com" ng-class="isVazio(email)"></label>
+	</div>
+
+	<div class="linha">
+		<label for="nome">Nome completo: <input type="text" id="nome" ng-model="nome" size="40" placeholder="ex. João da Silva" ng-class="isVazio(nome)"></label>
+	</div>
+
+	<div class="linha">
+		<label for="data_nascimento">Data de nascimento: <input type="date" id="data_nascimento" ng-model="data_nascimento" placeholder="ex. 30/12/1990" ng-class="isVazio(data_nascimento)"></label>
+	</div>
+
+	<div class="linha">
+		<label for="modalidade">Modalidade:
+			<select id="modalidade" ng-model="modalidade" ng-class="isVazio(modalidade)">
+				<option value="">Selecione...</option>
+				<option value="3">3km</option>
+				<option value="5">5km</option>
+				<option value="10">10km</option>
+			</select>
+		</label>
+	</div>
+
+	<div class="linha">
+		<label for="pace">Qual seu pace médio na prova? <input type="number" id="pace" ng-model="pace" placeholder="ex. 4.30" ng-class="isVazio(pace)" ng-change="atualizarPace()"> 
+		*Tempo médio estimado da prova (min): {{tempoMedioEstimado}} 
+		</label>
+	</div>
+
+	<div class="linha">
+		<button type="submit">Inscrever</button>
+	</div>
+
+</form>
+
 
 <script src="../bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
 
@@ -31,5 +63,6 @@
 		$('#cpf').focus();
 	});		
 </script>
+
 </body>
 </html>
