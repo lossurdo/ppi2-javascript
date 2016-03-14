@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title></title>
+
+	<script 
+		src="../bower_components/angular/angular.min.js" 
+		type="text/javascript"></script>	
+</head>
+<body>
+
+Digite seu nome:
+<input type="text" ng-model="nome" />
+<br />
+Digite sua idade:
+<input type="number" ng-model="idade" />
+
+<h1 ng-show="nome && idade">
+	Seu nome é {{nome}} e você deve 
+	ter nascido em {{2016 - idade}}!
+</h1>
+
+</body>
+</html>
+
+
+
