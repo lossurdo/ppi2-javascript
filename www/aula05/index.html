@@ -15,9 +15,13 @@
 		.altura-botao {
 			margin-top: 28px;
 		}
+		tfoot, thead {
+			font-weight: bold;			
+			background-color: #e9e9e9;
+		}
 	</style>
 </head>
-<body ng-controller="CadastroController">
+<body ng-controller="CadastroController" ng-init="listar()">
 
 <div class="container">
 	<div class="row">
@@ -29,11 +33,11 @@
 	<div class="row">
 		<div class="three columns"> 
 			<label for="oque">O que?</label>
-			<input class="u-full-width" type="text" placeholder="ex. margarina" id="oque" ng-model="produto.nome">
+			<input class="u-full-width" type="text" placeholder="ex. Margarina" id="oque" ng-model="produto.nome">
   		</div>
 		<div class="five columns"> 
 			<label for="qtd">Quantidade?</label>
-			<input type="number" id="qtd" ng-model="produto.quantidade">
+			<input type="number" id="qtd" ng-model="produto.quantidade" placeholder="ex. 5">
 			<select ng-model="produto.unidade">
 				<option value="Un.">Unidade</option>
 				<option value="g">Grama</option>
@@ -44,7 +48,7 @@
   		</div>
 		<div class="two columns"> 
 			<label for="vlr">Valor unitário?</label>
-			<input class="u-full-width" type="number" id="vlr" ng-model="produto.vlrUnitario">
+			<input class="u-full-width" type="number" id="vlr" ng-model="produto.vlrUnitario" placeholder="ex. 2,99">
   		</div>
 		<div class="two columns">
 			<button type="button" class="button button-primary altura-botao" ng-click="salvar()">Salvar</button>
@@ -63,7 +67,8 @@
 						<th></th>
 					</tr>
 				</thead>				
-					<tr ng-repeat="(i, obj) in listaCompras">
+				<tbody>
+					<tr ng-repeat="(i, obj) in listaCompras | orderBy:'nome'">
 						<td>
 							<a href="#" ng-click="selecionar(i)">{{obj.nome}}</a>
 						</td>
@@ -74,10 +79,17 @@
 							<a href="#" ng-click="excluir(i)">excluir</a>
 						</td>
 					</tr>
-					<tr>
-						<td colspan="5">Valor Total: {{valorTotal() | currency:'R$'}}</td>
-					</tr>
 				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2">&nbsp;</td>
+						<td>Valor Total</td>
+						<td>
+							{{valorTotal() | currency:'R$'}}
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+				</tfoot>
 			</table>
 		</div>	
 	</div>		
