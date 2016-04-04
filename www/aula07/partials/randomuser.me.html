@@ -1,0 +1,49 @@
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<h5 class="text-right {{isOnline?'online':'offline'}}">{{isOnline?'online':'offline'}}</h5>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<form action="" method="POST" role="form">
+			<legend>Filtro</legend>
+			<div class="form-group">
+				<input type="text" ng-model="pesquisa" class="form-control" id="pesq" placeholder="Digite seu termo para pesquisar...">
+			</div>
+		</form>	
+	</div>
+</div>
+
+<div class="row" ng-init="init()">
+	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" ng-repeat="(key, value) in listaUsuarios.results | filter:pesquisa">
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="text-center">
+					<img src="{{value.user.picture.thumbnail}}" alt="Avatar" class="arredondar">
+					<img src="{{value.user.gender=='male'?'img/male.gif':'img/female.png'}}" class="gender"></img>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="text-center">
+					<h3>
+						{{value.user.name.first | uppercase}}
+						{{value.user.name.last | uppercase}}
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div class="row">			
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="text-center">
+					<a href="mailto:{{value.user.email}}">{{value.user.email}}</a>
+				</div>
+			</div>
+		</div>
+
+		<br />
+	</div>
+</div>

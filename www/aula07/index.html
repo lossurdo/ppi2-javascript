@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="AppModule">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Exemplo de Controllers/Services - AngularJS</title>
+
+		<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+		<script src="../bower_components/angular/angular.min.js" type="text/javascript"></script>
+		<script src="../bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
+
+		<script src="js/app.js" type="text/javascript"></script>
+		<script src="js/randomuser-controller.js" type="text/javascript"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body ng-controller="AppController">
+		<div class="container">	
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="page-header">
+						<h1>
+						RandomUser.me <small>Pesquisa usando AngularJS, Controllers e Services</small>
+						</h1>
+					</div>
+				</div>				
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div ng-view />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="text-center">
+						Fonte dos dados: <a href="https://randomuser.me/">Random User Generator API</a>
+						<br />
+						&copy; Prof. Rafael Lossurdo - FSPOA
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	</body>
+</html>

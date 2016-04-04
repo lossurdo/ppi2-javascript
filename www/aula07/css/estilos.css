@@ -1,0 +1,19 @@
+.arredondar {
+	border-radius: 50%;
+	border: 1px solid #CCC;
+}
+
+.gender {
+	position: absolute;
+	top: 0;
+	right: 42%;
+}
+
+.online {
+	font-weight: bold;
+	color: green;
+}
+.offline {
+	font-weight: bold;
+	color: red;
+}
