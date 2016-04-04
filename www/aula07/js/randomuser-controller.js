@@ -1,6 +1,6 @@
-angular.module('RandomUserModule', []).
+angular.module('RandomUserModule', ['ExemploModule']).
 
-controller('RandomUserController', ['$scope', '$http', function($scope, $http) {
+controller('RandomUserController', ['$scope', '$http', 'ExemploService', function($scope, $http, ExemploService) {
 	
 	$scope.isOnline = false;	
 	$scope.listaUsuarios = {
@@ -8,34 +8,14 @@ controller('RandomUserController', ['$scope', '$http', function($scope, $http) {
 	};
 	$scope.pesquisa = '';
 
-	/*
-		Lendo arquivo LOCAL
-	*/
-	var tentativaOffline = function () {
-		$http({
-			method: 'GET',
-			url: 'json/randomuser.me.json'
-		}).
-		then(function (response) {			
-			$scope.listaUsuarios = response.data;
-		}, function (response) {
-			alert('Tentativa online e offline falharam!');
-		});
-	};
-
-	/*
-		Lendo API na internet
-	*/
 	$scope.init = function () {
-		$http({
-			method: 'GET',
-			url: 'https://randomuser.me/api/?results=20'
-		}).
-		then(function (response) {			
-			$scope.listaUsuarios = response.data;
+		ExemploService.get(function ok(data) {
+			$scope.listaUsuarios = data;
 			$scope.isOnline = true;
-		}, function (response) {
-			tentativaOffline();
+		}, function nok(erro) {
+			if(erro) {
+				alert('Não consegui coletar os dados de usuários!');
+			}
 		});
 	};
 
